@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#d8ffff"
+    android:orientation="vertical"
+    android:id="@+id/root_id"
+    tools:context=".MainActivity">
+
+
+    <FrameLayout
+        android:id="@+id/frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/score_gaming"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="5dp"
+                android:layout_toStartOf="@id/pause_while_playing"
+                android:fontFamily="@font/vt323"
+                android:gravity="center"
+                android:text="Score: 550"
+                android:textColor="#000000"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/pause_while_playing"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/ic_action_pause"
+                android:onClick="pauseGame" />
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/tapToStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="100sp"
+            android:fontFamily="@font/vt323"
+            android:gravity="center"
+            android:text="Tap to Start"
+            android:textSize="60sp" />
+
+        <ImageView
+            android:id="@+id/player"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/player0" />
+
+        <ImageView
+            android:id="@+id/coin"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/coin" />
+
+        <ImageView
+            android:id="@+id/enemy1"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/enemy1" />
+
+        <ImageView
+            android:id="@+id/enemy2"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/enemy2" />
+
+        <ImageView
+            android:id="@+id/diamond"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/diamond" />
+
+        <FrameLayout
+            android:id="@+id/frame_lb"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="250dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="35dp"
+                android:background="@drawable/pause" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_gravity="center_vertical">
+
+                <ImageButton
+                    android:id="@+id/start_after_paused"
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginEnd="5dp"
+                    android:layout_toStartOf="@id/orText"
+                    android:background="@drawable/ic_action_start"
+                    android:onClick="pauseGame" />
+
+                <TextView
+                    android:id="@+id/orText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/vt323"
+                    android:gravity="center"
+                    android:text="or"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <ImageButton
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_toEndOf="@+id/orText"
+                    android:background="@drawable/ic_action_exit"
+                    android:onClick="exitApp" />
+            </RelativeLayout>
+        </FrameLayout>
+    </FrameLayout>
+
+</LinearLayout>
