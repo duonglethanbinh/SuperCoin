@@ -114,16 +114,18 @@ public class MainActivity extends AppCompatActivity {
         dis.getSize(size);
 
         pauseWhilePlaying.setEnabled(false);
+        pauseWhilePlaying.setVisibility(View.GONE);
+        scoreGaming.setVisibility(View.GONE);
         frameLb.setVisibility(View.GONE);
 
         screenWidth = size.x;
         screenHeight = size.y;
 
         playerSpeed = Math.round(screenWidth / 100);
-        coinSpeed = Math.round(screenWidth / 100);
-        diamondSpeed = Math.round(screenWidth / 80);
-        enemy1Speed = Math.round(screenWidth / 80);
-        enemy2Speed = Math.round(screenWidth / 60);
+        coinSpeed = Math.round(screenWidth / 120);
+        diamondSpeed = Math.round(screenWidth / 100);
+        enemy1Speed = Math.round(screenWidth / 100);
+        enemy2Speed = Math.round(screenWidth / 80);
 
         coin.setX(-80f);
         coin.setY(-80f);
@@ -221,6 +223,10 @@ public class MainActivity extends AppCompatActivity {
             playerSize = player.getHeight();
 
             tapToStartLabel.setVisibility(View.GONE);
+
+            pauseWhilePlaying.setVisibility(View.VISIBLE);
+
+            scoreGaming.setVisibility(View.VISIBLE);
 
             pauseWhilePlaying.setEnabled(true);
 
@@ -332,14 +338,14 @@ public class MainActivity extends AppCompatActivity {
 
     public boolean checkTime() {
         increaseSpeed += 1;
-        if (increaseSpeed == 400) {
+        if (increaseSpeed == 300) {
             Math.round(coinSpeed += 1);
             Math.round(diamondSpeed += 1);
             Math.round(enemy1Speed += 1);
             Math.round(enemy2Speed += 1);
             increaseSpeed = 0;
             LinearLayout rootBg = findViewById(R.id.root_id);
-            rootBg.setBackgroundColor(Color.rgb(85, colorChange-=10, 200));
+            rootBg.setBackgroundColor(Color.rgb(85, colorChange -= 10, 200));
         }
         if (colorChange == 100) {
             colorChange = 255;

@@ -27,7 +27,7 @@ public class SoundEffects {
         }
 
         collectSound = sound.load(context, R.raw.collected, 1);
-        loseSound = sound.load(context, R.raw.gameover, 1);
+        loseSound = sound.load(context, R.raw.loser, 1);
     }
 
     public void collectSound() {

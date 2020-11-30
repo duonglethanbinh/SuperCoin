@@ -11,13 +11,13 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="5dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="5dp"
         android:background="@drawable/more" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="20dp"
         android:gravity="center"
         android:orientation="vertical">
 
@@ -114,8 +114,17 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginTop="50dp"
-            android:background="#d8ffff"
+            android:background="#d8fffa"
             android:src="@drawable/ic_action_play" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/vt323"
+            android:text="Hold to fly, release to dive"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 </RelativeLayout>
