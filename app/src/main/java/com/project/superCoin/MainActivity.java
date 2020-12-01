@@ -344,8 +344,9 @@ public class MainActivity extends AppCompatActivity {
             Math.round(enemy1Speed += 1);
             Math.round(enemy2Speed += 1);
             increaseSpeed = 0;
+//          Change Background
             LinearLayout rootBg = findViewById(R.id.root_id);
-            rootBg.setBackgroundColor(Color.rgb(85, colorChange -= 10, 200));
+            rootBg.setBackgroundColor(Color.rgb(85, colorChange -= 10, colorChange -= 10));
         }
         if (colorChange == 100) {
             colorChange = 255;

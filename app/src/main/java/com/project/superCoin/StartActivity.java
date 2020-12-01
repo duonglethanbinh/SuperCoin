@@ -52,21 +52,28 @@ public class StartActivity extends AppCompatActivity {
                         if (id == R.id.feedback) {
                             intent = new Intent(Intent.ACTION_SEND);
                             intent.setData(Uri.parse("mailto:"));
+
                             String[] to = {"17521305@gm.uit.edu.vn;17520279@gm.uit.edu.vn"};
                             intent.putExtra(Intent.EXTRA_EMAIL, to);
+                            intent.putExtra(Intent.EXTRA_SUBJECT, "Feedback about SuperCoin");
+                            intent.putExtra(Intent.EXTRA_TEXT, "I feel ...");
+
+                            //need this to prompts email client only
                             intent.setType("message/rfc822");
-                            chooser = Intent.createChooser(intent, "Send Feedback");
-                            startActivity(chooser);
+
+                            startActivity(Intent.createChooser(intent, "Send Feedback by using: "));
                         }
 
                         if (id == R.id.share) {
                             intent = new Intent(Intent.ACTION_SEND);
-                            intent.setType("text/plain");
-                            intent.putExtra(Intent.EXTRA_SUBJECT, "SuperCoin");
-                            String sAux = "\nLet me recommend you this Game\n\n";
-                            sAux = sAux + "https://uit.edu.vn\n\n";
+
+                            String sAux = "\nLet me recommend you this Game:\n\nClick on this link: https://uit.edu.vn\n\n";
+                            intent.putExtra(Intent.EXTRA_SUBJECT, "SuperCoin Share");
                             intent.putExtra(Intent.EXTRA_TEXT, sAux);
-                            startActivity(Intent.createChooser(intent, "Share"));
+
+                            intent.setType("text/plain");
+
+                            startActivity(Intent.createChooser(intent, "Share by using: "));
                         }
 
                         return true;

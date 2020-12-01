@@ -36,7 +36,7 @@
             android:textSize="25sp" />
 
         <TextView
-            android:id="@+id/hightScoreLabel"
+            android:id="@+id/highScoreLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10sp"

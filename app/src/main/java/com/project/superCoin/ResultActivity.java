@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 public class ResultActivity extends AppCompatActivity {
 
-    int hightScore;
+    int highScore;
     private long firstTimeExit = 0;
 
     @Override
@@ -26,26 +26,28 @@ public class ResultActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         TextView scoreLabel = findViewById(R.id.scoreLabel);
-        TextView hightScoreLabel = findViewById(R.id.hightScoreLabel);
+        TextView highScoreLabel = findViewById(R.id.highScoreLabel);
         TextView gamesPlayedLabel = findViewById(R.id.gamesPlayedLabel);
+
+        SharedPreferences preferencesScore = getSharedPreferences("HIGH_SCORE", Context.MODE_PRIVATE);
+        SharedPreferences preferencesGames = getSharedPreferences("GAMES", Context.MODE_PRIVATE);
 
         int score = getIntent().getIntExtra("SCORE", 0);
         scoreLabel.setText("" + score);
+        highScore = preferencesScore.getInt("HIGH_SCORE", 0);
 
-        SharedPreferences preferencesScore = getSharedPreferences("HIGHTSCORE", Context.MODE_PRIVATE);
-        hightScore = preferencesScore.getInt("HIGHTSCORE", 0);
-
-        if (score > hightScore) {
-            hightScoreLabel.setText("Hight Score: " + score);
+        //High score
+        if (score > highScore) {
+            highScoreLabel.setText("High Score: " + score);
 
             SharedPreferences.Editor editor = preferencesScore.edit();
-            editor.putInt("HIGHTSCORE", score);
+            editor.putInt("HIGH_SCORE", score);
             editor.commit();
         } else {
-            hightScoreLabel.setText("Hight Score: " + hightScore);
+            highScoreLabel.setText("High Score: " + highScore);
         }
 
-        SharedPreferences preferencesGames = getSharedPreferences("GAMES", Context.MODE_PRIVATE);
+        //Attempts
         int games = preferencesGames.getInt("GAMES", 0);
 
         gamesPlayedLabel.setText("Attempts: " + (games + 1));
